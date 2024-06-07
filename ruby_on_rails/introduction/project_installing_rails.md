@@ -1,8 +1,6 @@
 ### Introduction
 
-If you went through the [Ruby course](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby) you will have already installed Ruby. But if you haven't done that, then now is the time to [install it](https://www.theodinproject.com/lessons/ruby-installing-ruby) as you will need Ruby installed before we tackle installing Rails.
-
-With Ruby installed, you're all set to install Rails and create our first Rails app to ensure everything went smoothly.
+Ready to jump into Rails? Let's get started by installing it and creating your first Rails application!
 
 Before continuing, let's review a few best practices to keep in mind:
 
@@ -21,7 +19,7 @@ Don't worry if you don't totally understand what you are doing in these next ste
 
 #### Step 1.1: Install Rails
 
-We've previously installed Ruby, and now it's time to install Ruby on Rails. It's as simple as running one command!
+We've previously installed Ruby, and now it's time to install Ruby on Rails. It's just running one command!
 
 ~~~bash
 gem install rails

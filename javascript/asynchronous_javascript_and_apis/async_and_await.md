@@ -56,12 +56,12 @@ const server = {
 
 This section contains a general overview of topics that you will learn in this lesson.
 
- - Explain how you declare an `async` function
- - Explain what the `async` keyword does
- - Explain what the `await` keyword does
- - Explain what an `async` function returns
- - Explain what happens when an error is thrown inside an `async` function
- - Explain how you can handle errors inside an `async` function
+- Explain how you declare an `async` function.
+- Explain what the `async` keyword does.
+- Explain what the `await` keyword does.
+- Explain what an `async` function returns.
+- Explain what happens when an error is thrown inside an `async` function.
+- Explain how you can handle errors inside an `async` function.
 
 ### The async keyword
 
@@ -95,11 +95,11 @@ server.getPeople().then(async people => {
 
 ### The await keyword
 
-`await` is pretty simple: it tells JavaScript to wait for an asynchronous action to finish before continuing the function. It's like a 'pause until done' keyword. The `await` keyword is used to get a value from a function where you would normally use `.then()`. Instead of calling `.then()` after the asynchronous function, you would simply assign a variable to the result using `await`. Then you can use the result in your code as you would in your synchronous code.
+`await` does the following: it tells JavaScript to wait for an asynchronous action to finish before continuing the function. It's like a 'pause until done' keyword. The `await` keyword is used to get a value from a function where you would normally use `.then()`. Instead of calling `.then()` after the asynchronous function, you would assign a variable to the result using `await`. Then you can use the result in your code as you would in your synchronous code.
 
 ### Error handling
 
-Handling errors in `async` functions is very easy. Promises have the `.catch()` method for handling rejected promises, and since async functions just return a promise, you can simply call the function, and append a `.catch()` method to the end.
+Handling errors in `async` functions is very easy. Promises have the `.catch()` method for handling rejected promises, and since async functions just return a promise, you can call the function, and append a `.catch()` method to the end.
 
 ```javascript
 asyncFunctionCall().catch(err => {
@@ -187,7 +187,7 @@ Since `response` is still the same object we have passed to the `.then()` block 
 </script>
 ```
 
-To use this function, we just simply need to call it with `getCats()` in our code.
+To use this function, we just need to call it with `getCats()` in our code.
 
 ```javascript
 <script>
@@ -209,25 +209,26 @@ This code will behave exactly like the code from the last lesson; it just looks 
 <div class="lesson-content__panel" markdown="1">
 
 1. Read this [Async and Await article](https://javascript.info/async-await) for a solid introduction to async/await. This [Async and Await examples article](https://codeburst.io/javascript-es-2017-learn-async-await-by-example-48acc58bad65) also has some good examples of its use.
-2. Watch this [Async and Await video by Wes Bos](https://www.youtube.com/watch?v=9YkUCxvaLEk) for a good overview on async/await and its purpose, along with a special trick.
+1. Watch this [Async and Await video by Wes Bos](https://www.youtube.com/watch?v=9YkUCxvaLEk) for a good overview on async/await and its purpose, along with a special trick.
 
 </div>
 
 ### Knowledge check
 
-This section contains questions for you to check your understanding of this lesson. If you’re having trouble answering the questions below on your own, review the material above to find the answer.
+The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
 
- - [How do you declare an `async` function?](#the-async-keyword)
- - [What does the `async` keyword do?](#the-async-keyword)
- - [What does the `await` keyword do?](#the-await-keyword)
- - [What is returned from an `async` function?](https://javascript.info/async-await#summary)
- - [What happens when an error is thrown inside an `async` function?](https://javascript.info/async-await#error-handling)
- - [How can you handle errors inside an `async` function?](https://javascript.info/async-await#error-handling)
+- [How do you declare an `async` function?](#the-async-keyword)
+- [What does the `async` keyword do?](#the-async-keyword)
+- [What does the `await` keyword do?](#the-await-keyword)
+- [What is returned from an `async` function?](https://javascript.info/async-await#summary)
+- [What happens when an error is thrown inside an `async` function?](https://javascript.info/async-await#error-handling)
+- [How can you handle errors inside an `async` function?](https://javascript.info/async-await#error-handling)
 
 ### Additional resources
 
-This section contains helpful links to other content. It isn't required, so consider it supplemental.
+This section contains helpful links to related content. It isn't required, so consider it supplemental.
 
-1. This [Change promises to async/await video](https://www.youtube.com/watch?v=COKdtOgopWQ) is an example of how you can change callbacks, to promises, to async/await.
-2. This [Promises, Async and Await video](https://www.youtube.com/watch?v=vn3tm0quoqE) gives a comprehensive view of Promises, async, and await.
-3. For a more interactive explanation and example, try a [Scrim on async and await](https://scrimba.com/scrim/crd4eMc6?embed=odin,mini-header,no-next-up).
+- This [Change promises to async/await video](https://www.youtube.com/watch?v=COKdtOgopWQ) is an example of how you can change callbacks, to promises, to async/await.
+- This [Promises, Async and Await video](https://www.youtube.com/watch?v=vn3tm0quoqE) gives a comprehensive view of Promises, async, and await.
+- For a more interactive explanation and example, try a [Scrim on async and await](https://scrimba.com/scrim/crd4eMc6?embed=odin,mini-header,no-next-up).
+- This [blog post about Promises From The Ground Up](https://www.joshwcomeau.com/javascript/promises/#why-would-they-design-it-this-way-1) delves into how Promises work.

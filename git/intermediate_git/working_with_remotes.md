@@ -19,12 +19,12 @@ If you haven't updated your local branch, and you're attempting to `git push` a 
 
 You might perform a brief query and find the command `git push --force`. This command overwrites the remote repository with your own local history. So what would happen if we used this while working with others? Well, let's see what would happen when we're working with ourselves. Type the following commands into your terminal, and when the interactive rebase tool pops up remove our commit for `Create fourth file`:
 
-~~~bash
-$ git push origin main
-$ git rebase -i --root
-$ git push --force
-$ git log
-~~~
+```bash
+git push origin main
+git rebase -i --root
+git push --force
+git log
+```
 
 Huh, that's interesting. We don't see our fourth file on our local system. Let's check our GitHub repository to see if it's there.
 
@@ -32,18 +32,18 @@ Oh no, we just destroyed it!  In this scenario, the danger - you could potential
 
 Let's consider a different scenario:
 
-~~~bash
-$ touch test4.md
-$ git add test4.md && git commit -m "Create fifth file"
-$ git push origin main
-$ git log
-~~~
+```bash
+touch test4.md
+git add test4.md && git commit -m "Create fifth file"
+git push origin main
+git log
+```
 We look at our commit message and realize *oops*, we made a mistake. We want to undo this commit and are once again tempted to just force the push. But wait, remember, this is a **very dangerous command**. If we're ever considering using it, always check if it's appropriate and if we can use a safer command instead. If we're collaborating with others and want to *undo* a commit we just made, we can instead use `git revert`!
 
-~~~bash
+```bash
 git revert HEAD
 git push origin main
-~~~
+```
 
 Remember when we were working with HEAD, aka the current commit we're viewing, while rebasing? What this would do is it would revert the changes to HEAD! Then we would push our new commit to whichever branch we're working on, which in this example is main even though normally our work would most likely be on a feature-branch.
 
@@ -53,7 +53,7 @@ So now that we've learned about the various dangers of `git push --force`, you'r
 
 ### Dangers and best practices
 
-Let's review the dangers we've addressed so far. I know, I know, it's scary stuff - but we have to be mindful or our coworkers might end up hating our guts! If you look back through this lesson you'll see a common thread. `amend`, `rebase`, `reset`, `push --force` are all especially dangerous when you're collaborating with others. <span id='dangers'>These commands can destroy work your coworkers have created</span>. So keep that in mind. When attempting to rewrite history, always check the dangers of the particular command you're using and follow these best practices for the commands we've covered:
+Let's review the dangers we've addressed so far. I know, I know, it's scary stuff - but we have to be mindful or our coworkers might end up hating our guts! If you look back through this lesson you'll see a common thread. `commit --amend`, `rebase`, `reset`, `push --force` are all especially dangerous when you're collaborating with others. <span id='dangers'>These commands can destroy work your coworkers have created</span>. So keep that in mind. When attempting to rewrite history, always check the dangers of the particular command you're using and follow these best practices for the commands we've covered:
 
 <span id='best-practices'></span>
 
@@ -62,7 +62,7 @@ Let's review the dangers we've addressed so far. I know, I know, it's scary stuf
 3.  Using the `-f` flag to force something should scare you, and you better have a really good reason for using it.
 4.  Don't push after every single commit, changing published history should be avoided when possible.
 5.  Regarding the specific commands we've covered:
-    1.  For `git amend` never amend commits that have been pushed to remote repositories.
+    1.  For `git commit --amend` never amend commits that have been pushed to remote repositories.
     2.  For `git rebase` never rebase a repository that others may work off of.
     3.  For `git reset` never reset commits that have been pushed to remote repositories.
     4.  For `git push --force` only use it when appropriate, use it with caution, and preferably default to using `git push --force-with-lease`.
@@ -72,7 +72,7 @@ Let's review the dangers we've addressed so far. I know, I know, it's scary stuf
 <div class="lesson-content__panel" markdown="1">
 
 1.  Read through [GitHub's documentation on merge conflicts](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts)
-    *   It's only a matter of time until you run into one (if you haven't already)! While merge conflicts might seem intimidating, they're actually very simple. Take your time with this resource and make sure you look at the two different ways the documentation suggests resolving merge conflicts - on GitHub itself, and on your command line. While you might not need this right now, keeping the source of this documentation in the back of your mind will prove invaluable for when you eventually run into a merge conflict and aren't sure where to find a simple solution.
+    *   It's only a matter of time until you run into one (if you haven't already)! While merge conflicts might seem intimidating, they're actually very simple. Take your time with this resource and make sure you look at the two different ways the documentation suggests resolving merge conflicts - on GitHub itself, and on your command line. While you might not need this right now, keeping the source of this documentation in the back of your mind will prove invaluable for when you eventually run into a merge conflict and aren't sure where to find a solution.
 
 2.  Read [think-like-a-git](http://think-like-a-git.net/)
     *   Take your time with this resource as well, it's very well written and will be very helpful in solidifying your understanding of Git.
